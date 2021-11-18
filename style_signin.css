@@ -1,0 +1,62 @@
+
+
+body{
+    margin: 0;
+    padding: 0%;
+    font-family: sans-serif;
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFdyndP-yhuNK_53xspAcSKhM6-5Rg3XwkzQ&usqp=CAU");
+}
+.sign-in-form{
+    width: 450px;
+    box-shadow: 0 0 3px 0 rgba(0,0, 0,  0.1);
+    padding: 80px;
+    border-radius: 4vh;
+    background: lightgrey;
+    margin: 5% auto 0;
+    text-align: center;
+    height: 550px;
+    
+}
+.sign-in-form h1{
+    color: mediumblue;
+    margin-bottom: 20px;
+}
+
+.input-box{
+    border-radius: 10px;
+    width: 100%;
+    border: 1px solid #999;
+    outline: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+.sign-btn{
+    border-radius: 20px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    border: 1px;
+    outline: none;
+}
+.hr{
+    margin-top: 20px;
+    width: 75px;
+}
+.svg{
+    size: ledger;
+}
+
+.signup-form .fa {
+        font-size: 21px;
+    }
+
+.form-control, .form-control:focus, .input-group-addon {
+        border-color: #e1e1e1;
+    }

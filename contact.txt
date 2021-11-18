@@ -1,0 +1,130 @@
+<section class="contact">
+    <div class="container text-white my-5">
+      <h1 class="text-center">Contact Us</h1>
+      <div class="row">
+        <div class="col-lg-5 col-md-12 col-sm-12 col-12">
+          <form class="form-group">
+            Name
+            <input type="text" name="fname" class="form-controlmb-3" style="background-color: rgba(0,0,0,0) !important; color: white;" placeholder="eg. John Smith">
+            Email
+            <input type="email" name="ename" class="form-controlmb-3" style="background-color: rgba(0,0,0,0) !important; color: white;" placeholder="eg. johnsmith@gmail.com">
+            Paaword
+            <input type="password" name="pwd " class="form-controlmb-3" style="background-color: rgba(0,0,0,0) !important; color: white;" placeholder="Enter your Password">
+            <button class="btn bg-white px-5 my-5">Send Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#cf4a img:nth-of-type(1) {
+  animation-delay: 4s;
+}
+#cf4a img:nth-of-type(2) {
+  animation-delay: 3s;
+}
+#cf4a img:nth-of-type(3) {
+  animation-delay: 2s;
+}
+#cf4a img:nth-of-type(4) {
+  animation-delay: 0;
+}
+
+
+
+
+@keyframes cf4FadeInOut {
+  0% {
+    opacity:1;
+  }
+  17% {
+    opacity:1;
+  }
+  25% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="contact">
+    <div class="container text-white my-5">
+      <h1 class="text-center">Contact Us</h1>
+      <div class="row">
+        <div class="col-lg-5 col-md-12 col-sm-12 col-12">
+          <form class="form-group">
+            Name
+            <input type="text" name="fname" class="form-controlmb-3" style="background-color: rgba(0,0,0,0) !important; color: white;" placeholder="eg. John Smith">
+            Email
+            <input type="email" name="ename" class="form-controlmb-3" style="background-color: rgba(0,0,0,0) !important; color: white;" placeholder="eg. johnsmith@gmail.com">
+            Paaword
+            <input type="password" name="pwd " class="form-controlmb-3" style="background-color: rgba(0,0,0,0) !important; color: white;" placeholder="Enter your Password">
+            <button class="btn bg-white px-5 my-5">Send Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </section>
