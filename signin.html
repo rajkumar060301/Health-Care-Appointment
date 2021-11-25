@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-in</title>
+    <title>Patient SignIn</title>
     <link rel="stylesheet" href="style_signin.css">
 
 
@@ -23,7 +23,7 @@
         <h1>Sign in Now</h1>
         <h4  style="color: red;">(For Patient)</h4>
 
-        <form>
+        <form action="patient_signin.php" method="post">
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -37,10 +37,10 @@
             </div>
         </div>
             <p><span><input type="checkbox" name="" id=""></span> I agree to the  terms and conditions</p>
-            <button type="button" class="sign-btn">Sign in</button>
+            <button type="submit" class="sign-btn" name="login_but">Sign in</button>
             <hr>
             <p class="or">OR</p>
-            <button type="button" class="sign-btn">Sign up with email</button>
+            <button type="button" class="sign-btn"><a href="https://accounts.google.com/signin/v2/identifier?hl=en&continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3Dsign%2Bin%2Bgoogle%26oq%3Dsign%2Bin%2Bgoogle%26aqs%3Dchrome..69i57j0i512l4j69i60l3.11424j0j7%26sourceid%3Dchrome%26ie%3DUTF-8&ec=GAlAAQ&flowName=GlifWebSignIn&flowEntry=AddSession">Sign up with email</a></button>
 
             <p>Don't have an account ?<a href="signup.html">Sign up</a></p>
         </form>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 
-<title>Sign up</title>
+<title>Patient SignUp</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,7 +19,7 @@
 </head>
 <body>
 <div class="signup-form">
-    <form action="confirmation.html" method="post">
+    <form action="./signup.php" method="post">
 		<h2 style="text-align: center;">Sign Up</h2>
 		<p style="text-align:center;color: black;">Please fill in this form to create an account!</p>
 		<hr>
@@ -38,7 +38,7 @@
         <div class="form-group">
         	<div class="input-group">
         		<span class="input-group-addon"><i class="bi bi-phone-fill"></i></span>
-        		<input type="text" class="form-control" name="number" placeholder="Mobile Number" required="required">
+        		<input type="text" class="form-control" name="mob_number" placeholder="Mobile Number" required="required">
         		
         	</div>
         </div>
@@ -59,7 +59,7 @@
 			<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="terms.pdf">Terms of Use</a> &amp; <a href="pravicy.pdf">Privacy Policy</a></label>
 		</div>
 		<div class="form-group1">
-            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-lg">Sign Up</button>
         </div>
         <div class="form-group">
         	
