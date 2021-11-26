@@ -8,12 +8,12 @@ if (!$connection){
 }
 if (isset($_POST['login_but'])) {
 
-    session_start();
-    if (isset($_SESSION['username'])) {
-        echo $_SESSION['username'];
-        echo "<script>.location.href='patient.html'</script>";
-        echo "<a href='logout.php'><input type='button' value='logout' name='logout'></a>";
-    } else {
+//     session_start();
+//     if (isset($_SESSION['username'])) {
+//         echo $_SESSION['username'];
+//         echo "<script>.location.href='patient.html'</script>";
+//         echo "<a href='logout.php'><input type='button' value='logout' name='logout'></a>";
+//     } else {
 
         $read_query = "SELECT * from signup";
         $data = mysqli_query($connection, $read_query);
@@ -35,7 +35,7 @@ if (isset($_POST['login_but'])) {
                 }
             }
 
-        }
+//        }
     }
 }
 
