@@ -29,8 +29,8 @@ if (isset($_POST['login-but'])) {
         while ($row = mysqli_fetch_array($data)) {
             if ($row['EMAIL'] == $name || $row['MOBILE_NUMBER'] && $row['PASSWORD'] == $pwd) {
                 //echo "welcome to home";
-                //header("location:patient.html");
-                echo "<script>location.href='doctor.html'</script>";
+                header("location:patient.html");
+                //echo "<script>location.href='doctor.html'</script>";
 
             }
             else{

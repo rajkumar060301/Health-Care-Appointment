@@ -25,12 +25,15 @@ if (isset($_POST['submit'])) {
     }
     $insert_query="INSERT INTO doctor_data(`NAME`,`EMAIL`,`MOBILE_NUMBER`,`PASSWORD`,`STATE`,`DISTRICT`,`AREA`) VALUES('$name','$email','$mob_number','$password','$state','$district','$area')";
     if (mysqli_query($connection,$insert_query)){
-        // code...?>
+        // code...
+        ?>
         <script>
             alert("registration successfully")
         </script>
         <?php
         //header('location:./doctor_signin.html');
+        echo "<script>location.href='doctor_signin.html'</script>";
+
 
     }
 

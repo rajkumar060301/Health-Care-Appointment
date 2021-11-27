@@ -66,12 +66,13 @@ li:hover{
 	background-color: lightgray;
 	font-size: large;
 }
+/*.col-lg-3{*/
+/*	transform: translateY(-15px);*/
+
+/*}*/
+
 .btn-floating:hover{
 	background-color: gray;
 	border-radius: 100%;
 
 }
-/*.col-lg-3{*/
-/*	transform: translateY(-15px);*/
-
-/*}*/

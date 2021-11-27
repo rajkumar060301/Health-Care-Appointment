@@ -8,23 +8,24 @@ if (!$connection){
 }
 if (isset($_POST['login_but'])) {
 
-//     session_start();
-//     if (isset($_SESSION['username'])) {
-//         echo $_SESSION['username'];
-//         echo "<script>.location.href='patient.html'</script>";
-//         echo "<a href='logout.php'><input type='button' value='logout' name='logout'></a>";
-//     } else {
+//    session_start();
+//    if (isset($_SESSION['username'])) {
+//        echo $_SESSION['username'];
+//        echo "<script>.location.href='patient.html'</script>";
+//        echo "<a href='logout.php'><input type='button' value='logout' name='logout'></a>";
+//    } else {
 
         $read_query = "SELECT * from signup";
         $data = mysqli_query($connection, $read_query);
         if (mysqli_num_rows($data) > 0) {
             while ($row = mysqli_fetch_array($data)) {
                 if ($row['EMAIL'] == $name || $row['MOBILE_NUMBER'] && $row['PASSWORD'] == $pwd) {
-                    $_SESSION['username']=$row['EMAIL'];
+                    //$_SESSION['username']=$row['EMAIL'];
 
                     //echo "welcome to home";
-                    echo "<script>location.href='patient.html'</script>";
-                    //header("location:patient.html");
+
+                    //echo "<script>location.href='patient.html'</script>";
+                    header("location:patient.html");
                 } else {
                     //echo "Wrong data match";
                     //header("location:signin.html");
@@ -35,7 +36,7 @@ if (isset($_POST['login_but'])) {
                 }
             }
 
-//        }
-    }
+        }
+   // }
 }
 
