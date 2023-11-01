@@ -1,9 +1,7 @@
-
 <?php
-
 if(isset($_POST['btn'])){
 
-	$connection = mysqli_connect('localhost','root','','patient_data');
+	$connection = mysqli_connect('localhost','root','','patient_data'); 
 	if (!$connection) {
 		echo "connection failed";
 	}
@@ -37,10 +35,12 @@ VALUES
 if(mysqli_query($connection,$insert_query)){
 	?>
 	<script>
-	alert("Data inserted successfully");
-	</script>
+		alert("Data inserted successfully");
+    </script>
+	
 
 <?php
+header('location:patient.html');
 }
 else{		
 	?>

@@ -6,8 +6,6 @@ if(!$connection){
 }
 if (isset($_POST['submit'])) {
 	// code...
-
-
 $pass=$_POST['password'];
 $confirm_password =$_POST['confirm_password'];
 if($pass==$confirm_password){

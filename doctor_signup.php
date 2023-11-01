@@ -1,9 +1,5 @@
 <?php
-$connection=mysqli_connect('localhost','root','','doctor');
-if(!$connection){
-    echo "Connection failed";
-
-}
+require 'config/config.php';
 if (isset($_POST['submit'])) {
     // code...
 

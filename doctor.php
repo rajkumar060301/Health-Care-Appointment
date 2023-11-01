@@ -1,3 +1,17 @@
+<?php
+session_start();
+$name= $_SESSION['doctor_name'];
+require('config/config.php');
+$read_data = 'SELECT * FROM `doctor_data` where `NAME` ="'.$name.'" ';
+$result =mysqli_query($connection, $read_data);
+if(mysqli_num_rows($result) > 0){
+  $row = mysqli_fetch_array($result);
+  
+}
+else{
+	echo 'Data not found';
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,39 +23,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
 
-    <title>Home Page</title>
-
-
+    <title>Doctor Data</title>
     <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-
 
 <!--f.css ka footer hai-->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
     <!--f.css ka footer hai end-->
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 
-<style>
+<style> 
 .font{
   font-family: 'Lobster', cursive;
   color: #ffa500;
@@ -80,19 +84,26 @@
         <a class="nav-link font-weight-bold" href="./ContactPage.html">Contact</a>
         </a>
       </li>
+     <li class="nav-item pr-5">
+        <a class="nav-link font-weight-bold" href="doctor_patient.php">Data of Patient</a>
+      </li>
+  
       <li class="nav-item pr-5">
-        <a class="nav-link font-weight-bold" href="signin.html">Patient Log In</a>
+        <a class="nav-link font-weight-bold" href="#">Profile</a>
       </li>
       <li class="nav-item pr-5">
-        <a class="nav-link font-weight-bold" href="doctor_signin.html">Doctor Log In</a>
-            </li>
-      <li class="nav-item pr-5">
-        <a class="nav-link font-weight-bold" href="#" ><form action="doctor_data.php" method="post"><b><input type="submit" name="display" value="Doctor List" style="border:none;background-color: white;font-size:large;"></input></b></form></a>
+        <a class="nav-link font-weight-bold" href="#">Welcome!  <?php echo $row['NAME'];?></a>
       </li>
-    </ul>
+      <li class="nav-item pr-5">
+        <a class="nav-link font-weight-bold" href="doctor_logout.php">Log out</a>
+      </li>
 
+    </ul>
+    
   </div>
 </nav>
+
+
 <section class="home cf4a">
   <div class="container text-white pb-5">
     <div class="row">
@@ -111,10 +122,10 @@
       </div>
       <div class="col-lg-6 text-center">
         <h1 class="py-5 text-center" style="color: palevioletred;">About Us </h1>
-        <p class="pt-3">Health Care appointment is an online portal for all your health care needs. Our team of medical experts are there for you in every step of the way from finding the right doctor and hospital booking appointments, from providing verified information to any kind of medical assistance in-between.We provide virtu<span id="dots">...</span><span id="more">al appointment system so that patient need not to face hospital crowd.It is also good for emergency purpose.Patient can utilize our website at anytime and anywhere.We helps you to be organized and plan your activities around your meetings with your Doctors.We manage your care through our secure online patient portal.</span></p>
+        <p class="text-center pl-5">Health Care appointment is an online portal for all your health care needs. Our team of medical experts are there for you in every step of the way from finding the right doctor and hospital booking appointments, from providing verified information to any kind of medical assistance in-between.We provide virtu<span id="dots">...</span><span id="more">al appointment system so that patient need not to face hospital crowd.It is also good for emergency purpose.Patient can utilize our website at anytime and anywhere.We helps you to be organized and plan your activities around your meetings with your Doctors.We manage your care through our secure online patient portal.</span></p>
         <button onclick="myFunction()" id="myBtn" class="btn text-white mt-5" style="background-color:  palevioletred;"> Read More</button>
-      </div>
-    </div>
+      </div>  
+    </div>    
   </div>
   </section>
   <!--read more script-->
@@ -126,17 +137,17 @@ function myFunction() {
 
   if (dots.style.display === "none") {
     dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
+    btnText.innerHTML = "Read more"; 
     moreText.style.display = "none";
   } else {
     dots.style.display = "none";
-    btnText.innerHTML = "Read less";
+    btnText.innerHTML = "Read less"; 
     moreText.style.display = "inline";
-
+  }
 }
 </script>
 <!--read more script end-->
-
+  
   <section class="doctor">
     <div class="container py-5 text-center">
       <h1 class="pt-5">Our Doctors</h1>
@@ -229,7 +240,7 @@ function myFunction() {
         </div>
       </div>
     </div>
-
+    
   </section>
   <section class="Service">
   <div class="container text-center py-5">
@@ -267,16 +278,12 @@ function myFunction() {
         <h2 class="font-weight-light bubble" style="color: #ED9121;">Eyes</h2>
         <p>Take Care of your Eyes as Eyes are the lamp of the body</p>
       </div>
-
-
-
-
+      
+   
     </div>
   </div>
-
+    
   </section>
-
-
 <section class="Service">
   <div class="container text-center py-5">
     <h1 class="health">COVID PRECAUTIONS &#x1f469;&#x200d;&#x2695;&#xfe0f;</h1>
@@ -313,10 +320,10 @@ function myFunction() {
         <h2 class="font-weight-light">Mask</h2>
         <p>Always wear a mask</p>
       </div>
-
+         
     </div>
   </div>
-
+    
   </section>
     <!-- Footer -->
     <footer class="page-footer font-small mdb-color pt-4">
@@ -382,7 +389,7 @@ function myFunction() {
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
             <p>
-              <i class="fas fa-home mr-3"></i> India , Bihar 854108</p>
+              <i class="fas fa-home mr-3"></i> India , Bihar 854108, US</p>
             <p>
               <i class="fas fa-envelope mr-3"></i> rajkumarktr10@gmail.com</p>
             <p>
@@ -463,10 +470,10 @@ function myFunction() {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 <!--mdbootstrap5 script end-->
 
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+
   </body>
-</html>
+</html> 

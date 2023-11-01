@@ -3,34 +3,19 @@ $name = $_POST['username'];
 $pwd = $_POST['password'];
 //echo "$name and $pwd";
 $connection=mysqli_connect('localhost','root','','doctor');
+session_start();
 
 if (isset($_POST['login-but'])) {
 
-
-//session_start();
-//if (isset($_SESSION['username'])){
-//    echo "";
-//
-//}
-//else{
-//    if ($read_query==$name && $data==$pwd){
-//        echo "welcome";
-//        $_SESSION['username']=$name;
-//    }
-//    else{
-//        echo "Invalid username and password";
-//    }
-//}
-//    echo "Hello";
     $read_query = "SELECT * from doctor_data";
     $data = mysqli_query($connection, $read_query);
 
     if (mysqli_num_rows($data) > 0) {
         while ($row = mysqli_fetch_array($data)) {
             if ($row['EMAIL'] == $name || $row['MOBILE_NUMBER'] && $row['PASSWORD'] == $pwd) {
-                //echo "welcome to home";
-                header("location:patient.html");
-                //echo "<script>location.href='doctor.html'</script>";
+                header("location:doctor.php");
+                $_SESSION['doctor_name']=$row['NAME'];
+                
 
             }
             else{
