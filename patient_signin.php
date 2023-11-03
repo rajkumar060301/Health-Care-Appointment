@@ -14,7 +14,6 @@ if (isset($_POST['login_but'])) {
         while ($row = mysqli_fetch_array($data)) {
             if ($row['EMAIL'] == $name || $row['MOBILE_NUMBER'] && $row['PASSWORD'] == $pwd) {
                 $_SESSION['patient_id']=$row['ID'];
-                //echo "<script>location.href='patient.html'</script>";
                 header("location:patient_dashboard.php");
             } else {
 

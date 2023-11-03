@@ -21,25 +21,12 @@ if (isset($_POST['submit'])) {
     }
     $insert_query="INSERT INTO doctor_data(`NAME`,`EMAIL`,`MOBILE_NUMBER`,`PASSWORD`,`STATE`,`DISTRICT`,`AREA`) VALUES('$name','$email','$mob_number','$password','$state','$district','$area')";
     if (mysqli_query($connection,$insert_query)){
-        // code...
-        ?>
-        <script>
-            alert("registration successfully")
-        </script>
-        <?php
-        //header('location:./doctor_signin.html');
+        echo '<script>alert("registration successfully")</script>';
         echo "<script>location.href='doctor_signin.html'</script>";
-
-
     }
-
     else{
-        ?>
-            <script>
-                alert("Data not fill properly");
-            </script>
-        //echo "data not inserted";
-        <?php
+            echo '<script>alert("Data not fill properly");</script>';
+        
     }
 }
 

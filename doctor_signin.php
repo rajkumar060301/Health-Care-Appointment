@@ -15,13 +15,10 @@ if (isset($_POST['login-but'])) {
             if ($row['EMAIL'] == $name || $row['MOBILE_NUMBER'] && $row['PASSWORD'] == $pwd) {
                 header("location:doctor.php");
                 $_SESSION['doctor_name']=$row['NAME'];
-                
-
+              
             }
             else{
-                //echo "Wrong data match";
-                //header("location:signin.html");
-                //echo "<script>location.href='signin.html'</script>";
+   
                 echo "<script>alert('You entered Wrong user id or Password')</script>)";
                 echo "<script>location.href='doctor_signin.html'</script>";
 

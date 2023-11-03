@@ -11,11 +11,8 @@ $lname=$_POST['lname'];
 $full_name=$_POST['fname'].' '.$_POST['lname'];
 $dateOfBirth=$_POST['dateOfBirth'];
 $gender=$_POST['gender_male'];
-
-
 $snumber=$_POST['snumber'];
 $married=$_POST['single'];
-
 $allnumber=$_POST['number'];
 $mob_number=$_POST['mob_number'];
 $address=$_POST['address'];
@@ -33,22 +30,13 @@ $insert_query = "INSERT INTO patient(FULL_NAME,DATE_OF_BIRTH,GENDER,PATIENT_NUMB
 VALUES
 ('$full_name','$dateOfBirth','$gender','$snumber','$married','$allnumber','$mob_number','$address','$email','$district','$state','$pin','$country','$date','$image','$time','$doctor_name','$fees')";
 if(mysqli_query($connection,$insert_query)){
-	?>
-	<script>
-		alert("Data inserted successfully");
-    </script>
-	
+	echo '<script>alert("Data inserted successfully");</script>';
+    echo "<script>location.href='patient_dashboard.php'</script>";
 
-<?php
-header('location:patient.html');
 }
 else{		
-	?>
-	<script>
-	alert("Data Not Inserted Properly");
-	</script>
-    <script>location.href='patient.html'</script>
-	<?php
+	echo '<script>alert("Data Not Inserted Properly");</script>';
+    echo '<script>location.href="patient.html"</script>';
 
 }
 

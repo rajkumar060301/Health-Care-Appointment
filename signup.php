@@ -5,7 +5,6 @@ if(!$connection){
 
 }
 if (isset($_POST['submit'])) {
-	// code...
 $pass=$_POST['password'];
 $confirm_password =$_POST['confirm_password'];
 if($pass==$confirm_password){
@@ -20,23 +19,16 @@ else{
 }
 $insert_query="INSERT INTO signup(`NAME`,`EMAIL`,`MOBILE_NUMBER`,`PASSWORD`) VALUES('$name','$email','$mob_number','$password')";
 if (mysqli_query($connection,$insert_query)){
-	// code...?>
-	<script>
+	echo '<script>
 		alert("registration successfully");
-	</script>
-    <script>location.href='signin.html'</script>
-<?php
-    //echo "insert data";
+	</script>';
+    echo "<script>location.href='signin.html'</script>";
 
-    //header('location:./signin.html');
 }
 else{
-	?>
-	<script>
+	echo '<script>
 	alert("Data Not Inserted Properly");
-	</script>
-    //Data Not Inserted Properly
-<?php
+	</script>';
 }
 }
 ?>

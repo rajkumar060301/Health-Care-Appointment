@@ -5,9 +5,7 @@ $result = $connection->query($read_data);
 if($result->num_rows > 0){
 
 }
-else{
-	echo 'Data not found';
-}
+
 
 
 ?>
